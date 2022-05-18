@@ -2,7 +2,8 @@ const express = require('express');
 const cors = require('cors');
 
 const app = express();
-app.use(cors());
+app.use(cors())
+app.use(express.json());
 
 const accountSid = process.env.TWILIO_ACCOUNT_SID; //change
 const authToken = process.env.TWILIO_AUTH_TOKEN;
