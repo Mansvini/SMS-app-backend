@@ -13,7 +13,7 @@ app.get('/', (req, res)=> {
   res.send('this.is working');
 })
 
-app.post('/SendMessage', (req, res)=>{
+app.post('/SendMessage',cors(), (req, res)=>{
     client.messages
       .create({body: req.body.message, from: '+19472214483', to: req.body.phone})
       .catch(err=>res.status(400).json('server error'));
