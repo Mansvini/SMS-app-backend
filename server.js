@@ -19,7 +19,7 @@ app.post('/SendMessage',cors(), (req, res)=>{
       .catch(err=>res.status(400).json('server error'));
 })
 
-app.get('/MessageHistory', (req, res)=>{
+app.get('/MessageHistory',cors(), (req, res)=>{
     client.messages.list({limit: 20})
         .then(messages => res.json(messages))
         .catch(err=>res.status(400).json('server error'));
